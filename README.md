@@ -132,7 +132,7 @@ O frontend estará disponível em `http://localhost:5173`.
   <tr>
     <td align="center">
       <a href="https://github.com/BryanAbreu21">
-        <img src="https://avatars.githubusercontent.com/u/62347484?v=4" width="100px;" alt="Foto de Bryan"/><br>
+        <img src="https://avatars.githubusercontent.com/u/127118299?v=4)" width="100px;" alt="Foto de Bryan"/><br>
         <sub>
           <b>Bryan Rosenberg de Abreu</b>
         </sub>
