@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 interface LoginCredentials {
-    email: string
+    userName: string
     senha: string
 }
 

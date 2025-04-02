@@ -10,13 +10,13 @@ import { authApi } from "../../api/auth";
 import { useToast } from "../../hooks/use-toast";
 
 interface LoginFormProps {
-  onLogin: (email: string, senha: string, token: string) => void;
+  onLogin: (userName: string, senha: string, token: string) => void;
 }
 
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [credentials, setCredentials] = useState({ email: "", senha: "" });
+  const [credentials, setCredentials] = useState({ userName: "", senha: "" });
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -33,9 +33,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
       const token = await authApi.login(credentials);
       console.log(token);
       localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(credentials.email));
+      localStorage.setItem("user", JSON.stringify(credentials.userName));
 
-      onLogin(credentials.email, credentials.senha, token);
+      onLogin(credentials.userName, credentials.senha, token);
 
       toast({
         title: "Login bem-sucedido",
@@ -67,11 +67,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
                 <Mail size={16} />
               </IconWrapper>
               <Input
-                id="email"
-                name="email"
-                type="email"
+                id="userName"
+                name="userName"
+                type="userName"
                 placeholder="E-mail"
-                value={credentials.email}
+                value={credentials.userName}
                 onChange={handleChange}
                 required
                 style={{ paddingLeft: "2.5rem" }}

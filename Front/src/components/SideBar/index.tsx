@@ -31,7 +31,7 @@ import {
   FooterButton 
 } from "./style";
 import { useToast } from "../../hooks/use-toast";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import { useIsMobile } from "../../hooks/use-mobile";
 
 const Sidebar = () => {
