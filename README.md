@@ -39,17 +39,7 @@ git clone https://github.com/guourso/Lab-de-Projeto-2
 cd labProjetos2/backend
 ```
 
-### 2️⃣ Configuração do Banco de Dados
-
-Se estiver utilizando **Docker**, execute:
-
-```sh
-docker run --name meu-banco -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=meubanco -p 5432:5432 -d postgres
-```
-
-Caso prefira configurar manualmente, edite o arquivo `application.properties` ou `application.yml` com as credenciais corretas.
-
-### 3️⃣ Rodando o Backend
+### 2️⃣ Rodando o Backend
 
 Para compilar e rodar o projeto:
 
