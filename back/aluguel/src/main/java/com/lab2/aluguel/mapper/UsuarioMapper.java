@@ -1,18 +1,23 @@
 package com.lab2.aluguel.mapper;
 
 import org.springframework.stereotype.Component;
+
 import com.lab2.aluguel.dto.UsuarioDTO;
 import com.lab2.aluguel.model.Usuario;
 
 @Component
 public class UsuarioMapper {
-    public UsuarioDTO toDto(Usuario usuario) {
-        // TODO: Implementar mapeamento
-        return new UsuarioDTO();
+
+    public UsuarioMapper() {
     }
 
-    public Usuario toEntity(UsuarioDTO dto) {
-        // TODO: Implementar mapeamento
-        return new Usuario();
+    public UsuarioDTO toDTO(Usuario usuario) {
+        if (usuario == null) return null;
+        return UsuarioDTO.builder()
+                .id(usuario.getId())
+                .nome(usuario.getNome())
+                .email(usuario.getEmail())
+                .tipo(usuario.getTipo())
+                .build();
     }
 }

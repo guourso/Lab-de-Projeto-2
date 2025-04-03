@@ -1,9 +1,8 @@
 package com.lab2.aluguel.dto;
 
-import com.lab2.aluguel.enums.TipoUsuario;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
@@ -11,9 +10,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioDTO {
-    private Long id;
-    private String nome;
-    private String email;
-    private TipoUsuario tipo;
+@EqualsAndHashCode(callSuper = true)
+public class AgenteDTO extends UsuarioDTO {
+    private String cnpj;
+    private String cargo;
 }

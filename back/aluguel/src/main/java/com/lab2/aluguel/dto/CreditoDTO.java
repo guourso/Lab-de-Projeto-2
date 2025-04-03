@@ -1,6 +1,6 @@
 package com.lab2.aluguel.dto;
 
-import com.lab2.aluguel.enums.TipoUsuario;
+import java.math.BigDecimal;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +11,10 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioDTO {
+public class CreditoDTO {
     private Long id;
-    private String nome;
-    private String email;
-    private TipoUsuario tipo;
+    private BigDecimal valor;
+    private BigDecimal taxaJuros;
+    private String concedenteCnpj;
+    private String concedenteNome;
 }

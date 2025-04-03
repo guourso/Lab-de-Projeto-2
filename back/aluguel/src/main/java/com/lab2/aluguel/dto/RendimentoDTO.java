@@ -1,6 +1,7 @@
 package com.lab2.aluguel.dto;
 
-import com.lab2.aluguel.enums.TipoUsuario;
+import java.math.BigDecimal;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,9 +12,12 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioDTO {
+public class RendimentoDTO {
     private Long id;
     private String nome;
-    private String email;
-    private TipoUsuario tipo;
+    private String cnpj;
+    private boolean atual;
+    private BigDecimal renda;
+    private Date dataInicio;
+    private Date dataFim;
 }
