@@ -26,7 +26,7 @@ function App() {
             path="/dashboard"
             element={
               isAuthenticated ? (
-                <PrivateRoute role="CLIENT" userRole={userRole}>
+                <PrivateRoute role="CLIENTE" userRole={userRole}>
                   <ClientDashboard />
                 </PrivateRoute>
               ) : (
@@ -38,7 +38,7 @@ function App() {
             path="/dashboard"
             element={
               isAuthenticated ? (
-                <PrivateRoute role="ADMIN" userRole={userRole}>
+                <PrivateRoute role="FUNCIONARIO_BANCO" userRole={userRole}>
                   <AdminDashboard />
                 </PrivateRoute>
               ) : (

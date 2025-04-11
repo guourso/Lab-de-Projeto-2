@@ -42,7 +42,6 @@ const Sidebar = () => {
   const { toast } = useToast();
   const { theme, toggleTheme } = useTheme();
 
-  // Auto-collapse on mobile
   useEffect(() => {
     if (isMobile) {
       setCollapsed(true);
@@ -60,7 +59,6 @@ const Sidebar = () => {
     navigate("/");
   };
 
-  // Navigation items
   const navItems = [
     {
       name: "Dashboard",
@@ -82,16 +80,6 @@ const Sidebar = () => {
       icon: <Users size={20} />,
       path: "/customers",
     },
-    {
-      name: "Rotas",
-      icon: <MapPin size={20} />,
-      path: "/routes",
-    },
-    {
-      name: "Configurações",
-      icon: <Settings size={20} />,
-      path: "/settings",
-    },
   ];
 
   return (
@@ -102,7 +90,7 @@ const Sidebar = () => {
           <LogoBox>
             <ShoppingCart size={16} color="#000" />
           </LogoBox>
-          {!collapsed && <LogoTitle>Postin</LogoTitle>}
+          {!collapsed && <LogoTitle>Blue Drive</LogoTitle>}
         </LogoContainer>
         <ToggleButton onClick={() => setCollapsed(!collapsed)}>
           {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}

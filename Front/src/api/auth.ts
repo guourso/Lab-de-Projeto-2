@@ -1,17 +1,17 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:8081',
 })
 
 interface LoginCredentials {
-    userName: string
+    email: string
     senha: string
 }
 
 export const authApi = {
     login: async (credentials: LoginCredentials): Promise<string> => {
-        const { data } = await api.post('/auth/login', credentials)
+        const { data } = await api.post('/auth/authenticate', credentials)
         return data.token
     },
 }

@@ -16,7 +16,7 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [credentials, setCredentials] = useState({ userName: "", senha: "" });
+  const [credentials, setCredentials] = useState({ email: "", senha: "" });
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -33,9 +33,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
       const token = await authApi.login(credentials);
       console.log(token);
       localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(credentials.userName));
+      localStorage.setItem("user", JSON.stringify(credentials.email));
 
-      onLogin(credentials.userName, credentials.senha, token);
+      onLogin(credentials.email, credentials.senha, token);
 
       toast({
         title: "Login bem-sucedido",
@@ -67,11 +67,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
                 <Mail size={16} />
               </IconWrapper>
               <Input
-                id="userName"
-                name="userName"
-                type="userName"
+                id="email"
+                name="email"
+                type="email"
                 placeholder="E-mail"
-                value={credentials.userName}
+                value={credentials.email}
                 onChange={handleChange}
                 required
                 style={{ paddingLeft: "2.5rem" }}
